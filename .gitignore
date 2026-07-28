@@ -12,3 +12,6 @@ __pycache__/
 .vscode/
 .idea/
 *.log
+# CoDA large files
+CoDA_full.tar.zst
+model/

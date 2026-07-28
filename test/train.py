@@ -64,7 +64,9 @@ def define_model(args, nclass, logger=None, size=None):
 def train_on_gpu(gpu_id, args, return_dict):
     torch.cuda.set_device(gpu_id)
 
-    seed_offset = 0
+    # 原来硬编码为 0，导致单卡下 --seed 完全失效、多次运行结果恒等。
+    # 改成读 args.seed 后，单卡也能通过 --seed 拿到真正独立的重复实验。
+    seed_offset = getattr(args, "seed", 0)
     np.random.seed(gpu_id + seed_offset)
     torch.manual_seed(gpu_id + seed_offset)
     torch.cuda.manual_seed(gpu_id + seed_offset)

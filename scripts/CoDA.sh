@@ -3,7 +3,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 export PYTHONPATH="$SCRIPT_DIR:$PYTHONPATH"
 
 IMAGENET_FOLDER="/root/autodl-tmp/datasets/ImageNet"
-MODEL_FOLDER="/root/autodl-tmp/model/SDXL-Refiner"
+MODEL_FOLDER="$SCRIPT_DIR/../model/SDXL-Refiner"
 
 run_experiment() {
     local run_step1=${1:-true}

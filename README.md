@@ -13,6 +13,8 @@ CoDA is a novel dataset distillation framework leveraging an off-the-shelf text-
 To install the required dependencies, run:
 
 ```
+conda create -n coda python=3.10
+conda activate coda
 pip install -r requirements.txt
 ```
 
